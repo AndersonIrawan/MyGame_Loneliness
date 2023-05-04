@@ -6,7 +6,7 @@ public class Interact2 : MonoBehaviour
 {
     public GameObject Coins;
     public GameObject PressE, FisherGreeting, FisherBroke, FisherPaid;
-    public GameObject FishBucket;
+    public GameObject FishBucket, FisherHome, WifeHappy;
 
     public bool InArea, BuyFisher, NoFish;
 
@@ -17,6 +17,9 @@ public class Interact2 : MonoBehaviour
         FisherBroke.SetActive(false);
         FisherPaid.SetActive(false);
         FishBucket.SetActive(false);
+
+        FisherHome.SetActive(false);
+        WifeHappy.SetActive(false);
 
         InArea = false;
         BuyFisher = false;
@@ -39,6 +42,7 @@ public class Interact2 : MonoBehaviour
             FisherGreeting.SetActive(false);
             FisherBroke.SetActive(true);
             BuyFisher = false;
+            NoFish = false;
         }
         
         if (Input.GetKey("q") && InArea && Coins.activeSelf)
@@ -57,6 +61,14 @@ public class Interact2 : MonoBehaviour
             BuyFisher = false;
         }
 
+        if (FishBucket.activeSelf && InArea && WifeHappy.activeSelf)
+        {
+            PressE.SetActive(false);
+            FisherPaid.SetActive(false);
+            FisherHome.SetActive(true);
+            BuyFisher = false;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,6 +83,17 @@ public class Interact2 : MonoBehaviour
         FisherBroke.SetActive(false);
         FisherGreeting.SetActive(false);
         FisherPaid.SetActive(false);
+        FisherHome.SetActive(false);
+
         InArea = false;
+
+        if (FishBucket.activeSelf)
+        {
+            NoFish = false;
+        }
+        else
+        {
+            NoFish = true;
+        }
     }
 }

@@ -6,6 +6,8 @@ public class Fisherman : MonoBehaviour
 {
     public GameObject PressE, Fisherman1, Fisherman2, FishBucket, WifeHappy;
 
+    public GameObject FishermanIdle, FishermanIdle2;
+
     public bool InArea, Talking, Chat;
 
     // Start is called before the first frame update
@@ -13,6 +15,8 @@ public class Fisherman : MonoBehaviour
     {
         Fisherman1.SetActive(false);
         Fisherman2.SetActive(false);
+
+        FishermanIdle2.SetActive(false);
 
         InArea = false;
         Talking = false;
@@ -55,5 +59,11 @@ public class Fisherman : MonoBehaviour
         Fisherman1.SetActive(false);
         Fisherman2.SetActive(false);
         InArea = false;
+
+        if (WifeHappy.activeSelf)
+        {
+            FishermanIdle.SetActive(false);
+            FishermanIdle2.SetActive(true);
+        }
     }
 }

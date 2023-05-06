@@ -5,7 +5,7 @@ using UnityEngine;
 public class TownHall : MonoBehaviour
 {
 
-    public GameObject TownHallComment, MayorThank, PressE;
+    public GameObject TownHallComment, MayorThank, PressE, Sheriff;
 
     public GameObject BakerHappy, WifeHappy, ChildHappy, MayorAsk;
 
@@ -22,6 +22,7 @@ public class TownHall : MonoBehaviour
         MayorAsk.SetActive(false);
         BlackScreen.SetActive(false);
         GameFinished.SetActive(false);
+        Sheriff.SetActive(false);
 
         InArea = false;
         Mayor = true;
@@ -33,6 +34,7 @@ public class TownHall : MonoBehaviour
         if(BakerHappy.activeSelf && WifeHappy.activeSelf && ChildHappy.activeSelf)
         {
             MayorThank.SetActive(true);
+            Sheriff.SetActive(true);
         }
 
         if(InArea && MayorThank.activeSelf && Mayor)

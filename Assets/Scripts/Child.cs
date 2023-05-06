@@ -5,7 +5,7 @@ using UnityEngine;
 public class Child : MonoBehaviour
 {
     public GameObject PressE, ChildTalk1, ChildTalk2, ChildThank, Cat;
-    public GameObject ChildDone, ChildJimbo, ChildHappy;
+    public GameObject ChildDone, ChildJimbo, ChildHappy, CatJimbo;
 
     public bool InArea, HelpChild, NoCat, CatDone;
 
@@ -18,6 +18,7 @@ public class Child : MonoBehaviour
         ChildThank.SetActive(false);
         ChildDone.SetActive(false);
         Cat.SetActive(false);
+        CatJimbo.SetActive(false);
 
         InArea = false;
         HelpChild = false;
@@ -59,6 +60,7 @@ public class Child : MonoBehaviour
         if(InArea && ChildHappy.activeSelf)
         {
             ChildThank.SetActive(true);
+            CatJimbo.SetActive(true);
         }
     }
 

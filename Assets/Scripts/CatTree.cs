@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CatTree : MonoBehaviour
 {
-    public GameObject Cat, CatRustle, CatBait, FishBucket, ChildDone;
+    public GameObject Cat, CatRustle, CatBait, FishBucket, ChildDone, ChildHappy;
+
+    public GameObject CattoTree, NewTree;
 
     public bool InArea;
     
@@ -14,6 +16,8 @@ public class CatTree : MonoBehaviour
         CatRustle.SetActive(false);
         CatBait.SetActive(false);
         Cat.SetActive(false);
+
+        NewTree.SetActive(false);
 
         InArea = false;
     }
@@ -26,6 +30,8 @@ public class CatTree : MonoBehaviour
             Cat.SetActive(true);
             CatBait.SetActive(false);
             ChildDone.SetActive(true);
+            CattoTree.SetActive(false);
+            NewTree.SetActive(true);
         }
 
         if(InArea && Cat.activeSelf)
@@ -40,6 +46,10 @@ public class CatTree : MonoBehaviour
         {
             CatRustle.SetActive(false);
             CatBait.SetActive(true);
+        } else if (ChildHappy.activeSelf || Cat.activeSelf)
+        {
+            CatRustle.SetActive(false);
+            CatBait.SetActive(false);
         }
         else
         {

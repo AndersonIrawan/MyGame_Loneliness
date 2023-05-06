@@ -270,6 +270,7 @@ MonoBehaviour:
   MayorAsk: {fileID: 1306652416}
   BlackScreen: {fileID: 1894104352}
   GameFinished: {fileID: 1473887158}
+  Terrain: {fileID: 0}
   InArea: 0
   Mayor: 0
 --- !u!65 &39631612
@@ -3150,7 +3151,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'The sheriff hears about your deeds.
 
-    Go see him at the town hall.'
+    Go see her at the town hall.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -6488,8 +6489,7 @@ MonoBehaviour:
   m_text: 'Oh, she misses me? I''ll run right home.
 
 
-    Thanks for telling me,
-    lad.'
+    Thanks for telling me.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -10340,11 +10340,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hello, lad! Were those fish from my store?
+  m_text: 'Hello there! Were those fish from my store?
 
 
-    Press ''Q'' to tell him
-    to go home'
+    Press ''Q'' to tell
+    him to go home'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}

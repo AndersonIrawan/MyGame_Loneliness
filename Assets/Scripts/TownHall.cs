@@ -9,7 +9,7 @@ public class TownHall : MonoBehaviour
 
     public GameObject BakerHappy, WifeHappy, ChildHappy, MayorAsk;
 
-    public GameObject BlackScreen, GameFinished;
+    public GameObject BlackScreen, GameFinished, Terrain;
 
     public bool InArea, Mayor;
 
@@ -54,6 +54,7 @@ public class TownHall : MonoBehaviour
         {
             BlackScreen.SetActive(true);
             GameFinished.SetActive(true);
+            Terrain.SetActive(false);
         }
 
     }

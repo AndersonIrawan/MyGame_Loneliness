@@ -5,28 +5,71 @@ using UnityEngine;
 public class TownHall : MonoBehaviour
 {
 
-    public GameObject TownHallComment;
+    public GameObject TownHallComment, MayorThank, PressE;
+
+    public GameObject BakerHappy, WifeHappy, ChildHappy, MayorAsk;
+
+    public GameObject BlackScreen, GameFinished;
+
+    public bool InArea, Mayor;
 
     // Start is called before the first frame update
     void Start()
     {
-        TownHallComment = GameObject.Find("TownHallComment");
         TownHallComment.SetActive(false);
+
+        MayorThank.SetActive(false);
+        MayorAsk.SetActive(false);
+        BlackScreen.SetActive(false);
+        GameFinished.SetActive(false);
+
+        InArea = false;
+        Mayor = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(BakerHappy.activeSelf && WifeHappy.activeSelf && ChildHappy.activeSelf)
+        {
+            MayorThank.SetActive(true);
+        }
+
+        if(InArea && MayorThank.activeSelf && Mayor)
+        {
+            PressE.SetActive(true);
+
+            Mayor = false;        
+        }
+
+        if(Input.GetKey("e") && InArea && MayorThank.activeSelf)
+        {
+            PressE.SetActive(false);
+            MayorAsk.SetActive(true);
+        }
+
+        if(Input.GetKey("q") && InArea && MayorAsk)
+        {
+            BlackScreen.SetActive(true);
+            GameFinished.SetActive(true);
+        }
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        TownHallComment.SetActive(true);
+        InArea = true;
+        if(MayorThank.activeSelf)
+        {
+            PressE.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        TownHallComment.SetActive(false);
+        InArea = false;
+        PressE.SetActive(false);
+        MayorAsk.SetActive(false);
+
     }
 }

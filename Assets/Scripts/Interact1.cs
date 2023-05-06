@@ -8,6 +8,8 @@ public class Interact1 : MonoBehaviour
     public GameObject FstPoster, ScdPoster, TrdPoster, FstMarker;
     public GameObject BakerDone, BakerReward, Coins, BakeryWork;
 
+    public GameObject BakerHappy;
+
     public bool GameStart;
 
     public bool InArea, QuestBakery, BakeryQuestActive;
@@ -31,6 +33,8 @@ public class Interact1 : MonoBehaviour
         BakerDone.SetActive(false);
         BakerReward.SetActive(false);
         Coins.SetActive(false);
+
+        BakerHappy.SetActive(false);
 
         InArea = false;
         QuestBakery = false;
@@ -90,7 +94,7 @@ public class Interact1 : MonoBehaviour
         {
             PressE.SetActive(false);
             BakeryWork.SetActive(true);
-
+            BakerHappy.SetActive(true);
         }
     }
 
@@ -104,6 +108,7 @@ public class Interact1 : MonoBehaviour
     {
         PressE.SetActive(false);
         BakeryGreeting.SetActive(false);
+        BakerReward.SetActive(false);
         BakeryWork.SetActive(false);
         InArea = false;
     }

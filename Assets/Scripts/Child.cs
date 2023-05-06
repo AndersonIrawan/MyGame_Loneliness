@@ -5,7 +5,7 @@ using UnityEngine;
 public class Child : MonoBehaviour
 {
     public GameObject PressE, ChildTalk1, ChildTalk2, ChildThank, Cat;
-    public GameObject ChildDone;
+    public GameObject ChildDone, ChildJimbo, ChildHappy;
 
     public bool InArea, HelpChild, NoCat, CatDone;
 
@@ -23,6 +23,8 @@ public class Child : MonoBehaviour
         HelpChild = false;
         NoCat = true;
         CatDone = false;
+        ChildHappy.SetActive(false);
+        ChildJimbo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,6 +53,12 @@ public class Child : MonoBehaviour
             HelpChild = false;
             NoCat = false;
             CatDone = true;
+            ChildHappy.SetActive(true);
+        }
+
+        if(InArea && ChildHappy.activeSelf)
+        {
+            ChildThank.SetActive(true);
         }
     }
 
